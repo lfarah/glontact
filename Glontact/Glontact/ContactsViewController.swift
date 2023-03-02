@@ -39,7 +39,7 @@ class ContactsViewController: UIViewController {
     
     func bind() {
         tableView.register(type: ContactCell.self)
-        cancellable = viewModel.$contacts.sink(receiveValue: { [weak self] _ in
+        cancellable = viewModel.contactStore.objectWillChange.sink(receiveValue: { [weak self] _ in
             self?.tableView.reloadData()
         })
     }
@@ -48,15 +48,16 @@ class ContactsViewController: UIViewController {
 // MARK: - UITableViewDataSource
 extension ContactsViewController: UITableViewDataSource {
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-        viewModel.contacts.count
+        viewModel.contactStore.contacts.count
     }
     
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         let cell = tableView.dequeueReusableCell(type: ContactCell.self, indexPath: indexPath)
-        let contact = viewModel.contacts[indexPath.row]
+        let contact = viewModel.contactStore.contacts[indexPath.row]
         
         cell.name = contact.firstName
         cell.company = contact.companyName
+        
         return cell
     }
 }
@@ -64,6 +65,10 @@ extension ContactsViewController: UITableViewDataSource {
 // MARK: - UITableViewDelegate
 extension ContactsViewController: UITableViewDelegate {
     func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
+        // If I had more time, I would've implemented a Coordinator
+        let contact = viewModel.contactStore.contacts[indexPath.row]
+        let vc = ContactDetailViewController(contact: contact)
         
+        navigationController?.pushViewController(vc, animated: true)
     }
 }

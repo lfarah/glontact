@@ -8,13 +8,36 @@
 import Foundation
 import Combine
 
-class ContactsViewModel {
+class ContactStore: ObservableObject {
     
-    @Published var contacts: [Contact] = []
+    var cancellables: [AnyCancellable] = []
+
+    @Published var contacts: [UpdatableContact] = []
+
+    internal init(contacts: [UpdatableContact] = []) {
+        self.contacts = contacts
+        
+        // get the ObservableObjectPublisher publishers
+        let observables = contacts.map { $0.objectWillChange }
+
+        // notify that this object will change when any of the contacts change
+        Publishers.MergeMany(observables)
+            .sink(receiveValue: { value in
+                self.objectWillChange.send()
+            })
+           .store(in: &cancellables)
+    }
     
+}
+
+class ContactsViewModel: ObservableObject {
+    @Published var contactStore = ContactStore()
+        
     init(manager: CSVManager = CSVManager()) {
         manager.loadCSV()
+            .map { $0.map { $0.toUpdatable() }}
             .replaceError(with: [])
-            .assign(to: &$contacts)
+            .map { ContactStore(contacts: $0) }
+            .assign(to: &$contactStore)
     }
 }

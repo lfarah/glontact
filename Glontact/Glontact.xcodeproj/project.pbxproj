@@ -23,6 +23,8 @@
 		C276E6F129B11F5D00FF8441 /* ContactsViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = C276E6F029B11F5D00FF8441 /* ContactsViewModel.swift */; };
 		C276E6F329B1251E00FF8441 /* ContactCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = C276E6F229B1251E00FF8441 /* ContactCell.swift */; };
 		C276E6F529B1263C00FF8441 /* UITableView+Extensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = C276E6F429B1263C00FF8441 /* UITableView+Extensions.swift */; };
+		C276E6F729B126F800FF8441 /* ContactDetailViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = C276E6F629B126F800FF8441 /* ContactDetailViewController.swift */; };
+		C276E6FA29B129AE00FF8441 /* Eureka in Frameworks */ = {isa = PBXBuildFile; productRef = C276E6F929B129AE00FF8441 /* Eureka */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -62,6 +64,7 @@
 		C276E6F029B11F5D00FF8441 /* ContactsViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContactsViewModel.swift; sourceTree = "<group>"; };
 		C276E6F229B1251E00FF8441 /* ContactCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContactCell.swift; sourceTree = "<group>"; };
 		C276E6F429B1263C00FF8441 /* UITableView+Extensions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UITableView+Extensions.swift"; sourceTree = "<group>"; };
+		C276E6F629B126F800FF8441 /* ContactDetailViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContactDetailViewController.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -70,6 +73,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				C276E6E929B10D4700FF8441 /* SwiftCSV in Frameworks */,
+				C276E6FA29B129AE00FF8441 /* Eureka in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -116,8 +120,9 @@
 				C276E6B729B10BC600FF8441 /* AppDelegate.swift */,
 				C276E6B929B10BC600FF8441 /* SceneDelegate.swift */,
 				C276E6BB29B10BC600FF8441 /* ContactsViewController.swift */,
-				C276E6F229B1251E00FF8441 /* ContactCell.swift */,
 				C276E6F029B11F5D00FF8441 /* ContactsViewModel.swift */,
+				C276E6F629B126F800FF8441 /* ContactDetailViewController.swift */,
+				C276E6F229B1251E00FF8441 /* ContactCell.swift */,
 				C276E6F429B1263C00FF8441 /* UITableView+Extensions.swift */,
 				C276E6EC29B10D7E00FF8441 /* CSVManager.swift */,
 				C276E6EE29B119B400FF8441 /* Contact.swift */,
@@ -165,6 +170,7 @@
 			name = Glontact;
 			packageProductDependencies = (
 				C276E6E829B10D4700FF8441 /* SwiftCSV */,
+				C276E6F929B129AE00FF8441 /* Eureka */,
 			);
 			productName = Glontact;
 			productReference = C276E6B429B10BC600FF8441 /* Glontact.app */;
@@ -240,6 +246,7 @@
 			mainGroup = C276E6AB29B10BC600FF8441;
 			packageReferences = (
 				C276E6E729B10D4700FF8441 /* XCRemoteSwiftPackageReference "SwiftCSV" */,
+				C276E6F829B129AD00FF8441 /* XCRemoteSwiftPackageReference "Eureka" */,
 			);
 			productRefGroup = C276E6B529B10BC600FF8441 /* Products */;
 			projectDirPath = "";
@@ -289,6 +296,7 @@
 				C276E6F129B11F5D00FF8441 /* ContactsViewModel.swift in Sources */,
 				C276E6B829B10BC600FF8441 /* AppDelegate.swift in Sources */,
 				C276E6F529B1263C00FF8441 /* UITableView+Extensions.swift in Sources */,
+				C276E6F729B126F800FF8441 /* ContactDetailViewController.swift in Sources */,
 				C276E6EF29B119B400FF8441 /* Contact.swift in Sources */,
 				C276E6ED29B10D7E00FF8441 /* CSVManager.swift in Sources */,
 				C276E6F329B1251E00FF8441 /* ContactCell.swift in Sources */,
@@ -638,6 +646,14 @@
 				minimumVersion = 0.8.1;
 			};
 		};
+		C276E6F829B129AD00FF8441 /* XCRemoteSwiftPackageReference "Eureka" */ = {
+			isa = XCRemoteSwiftPackageReference;
+			repositoryURL = "https://github.com/xmartlabs/Eureka";
+			requirement = {
+				kind = upToNextMajorVersion;
+				minimumVersion = 5.0.0;
+			};
+		};
 /* End XCRemoteSwiftPackageReference section */
 
 /* Begin XCSwiftPackageProductDependency section */
@@ -645,6 +661,11 @@
 			isa = XCSwiftPackageProductDependency;
 			package = C276E6E729B10D4700FF8441 /* XCRemoteSwiftPackageReference "SwiftCSV" */;
 			productName = SwiftCSV;
+		};
+		C276E6F929B129AE00FF8441 /* Eureka */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = C276E6F829B129AD00FF8441 /* XCRemoteSwiftPackageReference "Eureka" */;
+			productName = Eureka;
 		};
 /* End XCSwiftPackageProductDependency section */
 	};
