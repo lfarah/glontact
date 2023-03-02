@@ -6,14 +6,22 @@
 //
 
 import UIKit
+import Combine
 
 class ViewController: UIViewController {
 
+    var cancellable: AnyCancellable?
+    
     override func viewDidLoad() {
         super.viewDidLoad()
         // Do any additional setup after loading the view.
+        
+        // TODO: Move to ViewModel
+        cancellable = CSVManager().loadCSV()
+            .sink(receiveCompletion: { completed in
+                print(completed)
+            }, receiveValue: { contacts in
+                print("contacts: \(contacts)")
+            })
     }
-
-
 }
-

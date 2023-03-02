@@ -16,6 +16,10 @@
 		C276E6CF29B10BC800FF8441 /* GlontactTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = C276E6CE29B10BC800FF8441 /* GlontactTests.swift */; };
 		C276E6D929B10BC800FF8441 /* GlontactUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = C276E6D829B10BC800FF8441 /* GlontactUITests.swift */; };
 		C276E6DB29B10BC800FF8441 /* GlontactUITestsLaunchTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = C276E6DA29B10BC800FF8441 /* GlontactUITestsLaunchTests.swift */; };
+		C276E6E929B10D4700FF8441 /* SwiftCSV in Frameworks */ = {isa = PBXBuildFile; productRef = C276E6E829B10D4700FF8441 /* SwiftCSV */; };
+		C276E6EB29B10D5D00FF8441 /* sample_contacts.csv in Resources */ = {isa = PBXBuildFile; fileRef = C276E6EA29B10D5D00FF8441 /* sample_contacts.csv */; };
+		C276E6ED29B10D7E00FF8441 /* CSVManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = C276E6EC29B10D7E00FF8441 /* CSVManager.swift */; };
+		C276E6EF29B119B400FF8441 /* Contact.swift in Sources */ = {isa = PBXBuildFile; fileRef = C276E6EE29B119B400FF8441 /* Contact.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -49,6 +53,9 @@
 		C276E6D429B10BC800FF8441 /* GlontactUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = GlontactUITests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		C276E6D829B10BC800FF8441 /* GlontactUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GlontactUITests.swift; sourceTree = "<group>"; };
 		C276E6DA29B10BC800FF8441 /* GlontactUITestsLaunchTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GlontactUITestsLaunchTests.swift; sourceTree = "<group>"; };
+		C276E6EA29B10D5D00FF8441 /* sample_contacts.csv */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = sample_contacts.csv; sourceTree = "<group>"; };
+		C276E6EC29B10D7E00FF8441 /* CSVManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CSVManager.swift; sourceTree = "<group>"; };
+		C276E6EE29B119B400FF8441 /* Contact.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Contact.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -56,6 +63,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				C276E6E929B10D4700FF8441 /* SwiftCSV in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -102,9 +110,12 @@
 				C276E6B729B10BC600FF8441 /* AppDelegate.swift */,
 				C276E6B929B10BC600FF8441 /* SceneDelegate.swift */,
 				C276E6BB29B10BC600FF8441 /* ViewController.swift */,
+				C276E6EC29B10D7E00FF8441 /* CSVManager.swift */,
+				C276E6EE29B119B400FF8441 /* Contact.swift */,
 				C276E6BD29B10BC600FF8441 /* Main.storyboard */,
 				C276E6C029B10BC700FF8441 /* Assets.xcassets */,
 				C276E6C229B10BC700FF8441 /* LaunchScreen.storyboard */,
+				C276E6EA29B10D5D00FF8441 /* sample_contacts.csv */,
 				C276E6C529B10BC700FF8441 /* Info.plist */,
 			);
 			path = Glontact;
@@ -143,6 +154,9 @@
 			dependencies = (
 			);
 			name = Glontact;
+			packageProductDependencies = (
+				C276E6E829B10D4700FF8441 /* SwiftCSV */,
+			);
 			productName = Glontact;
 			productReference = C276E6B429B10BC600FF8441 /* Glontact.app */;
 			productType = "com.apple.product-type.application";
@@ -215,6 +229,9 @@
 				Base,
 			);
 			mainGroup = C276E6AB29B10BC600FF8441;
+			packageReferences = (
+				C276E6E729B10D4700FF8441 /* XCRemoteSwiftPackageReference "SwiftCSV" */,
+			);
 			productRefGroup = C276E6B529B10BC600FF8441 /* Products */;
 			projectDirPath = "";
 			projectRoot = "";
@@ -232,6 +249,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				C276E6C429B10BC700FF8441 /* LaunchScreen.storyboard in Resources */,
+				C276E6EB29B10D5D00FF8441 /* sample_contacts.csv in Resources */,
 				C276E6C129B10BC700FF8441 /* Assets.xcassets in Resources */,
 				C276E6BF29B10BC600FF8441 /* Main.storyboard in Resources */,
 			);
@@ -260,6 +278,8 @@
 			files = (
 				C276E6BC29B10BC600FF8441 /* ViewController.swift in Sources */,
 				C276E6B829B10BC600FF8441 /* AppDelegate.swift in Sources */,
+				C276E6EF29B119B400FF8441 /* Contact.swift in Sources */,
+				C276E6ED29B10D7E00FF8441 /* CSVManager.swift in Sources */,
 				C276E6BA29B10BC600FF8441 /* SceneDelegate.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -596,6 +616,25 @@
 			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
+
+/* Begin XCRemoteSwiftPackageReference section */
+		C276E6E729B10D4700FF8441 /* XCRemoteSwiftPackageReference "SwiftCSV" */ = {
+			isa = XCRemoteSwiftPackageReference;
+			repositoryURL = "https://github.com/swiftcsv/SwiftCSV";
+			requirement = {
+				kind = upToNextMajorVersion;
+				minimumVersion = 0.8.1;
+			};
+		};
+/* End XCRemoteSwiftPackageReference section */
+
+/* Begin XCSwiftPackageProductDependency section */
+		C276E6E829B10D4700FF8441 /* SwiftCSV */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = C276E6E729B10D4700FF8441 /* XCRemoteSwiftPackageReference "SwiftCSV" */;
+			productName = SwiftCSV;
+		};
+/* End XCSwiftPackageProductDependency section */
 	};
 	rootObject = C276E6AC29B10BC600FF8441 /* Project object */;
 }
