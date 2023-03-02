@@ -29,6 +29,8 @@ class ContactsViewController: UIViewController {
     }
     
     func layout() {
+        title = "Contacts"
+        
         view.addSubview(tableView)
         
         tableView.leadingAnchor.constraint(equalTo: view.leadingAnchor).isActive = true

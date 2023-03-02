@@ -27,6 +27,8 @@ class ContactDetailViewController: FormViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         
+        title = contact.firstName
+        
         form +++ Section("Info")
         <<< NameRow(){ row in
             row.title = "First Name"
