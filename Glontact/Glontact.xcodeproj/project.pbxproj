@@ -21,6 +21,8 @@
 		C276E6ED29B10D7E00FF8441 /* CSVManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = C276E6EC29B10D7E00FF8441 /* CSVManager.swift */; };
 		C276E6EF29B119B400FF8441 /* Contact.swift in Sources */ = {isa = PBXBuildFile; fileRef = C276E6EE29B119B400FF8441 /* Contact.swift */; };
 		C276E6F129B11F5D00FF8441 /* ContactsViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = C276E6F029B11F5D00FF8441 /* ContactsViewModel.swift */; };
+		C276E6F329B1251E00FF8441 /* ContactCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = C276E6F229B1251E00FF8441 /* ContactCell.swift */; };
+		C276E6F529B1263C00FF8441 /* UITableView+Extensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = C276E6F429B1263C00FF8441 /* UITableView+Extensions.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -58,6 +60,8 @@
 		C276E6EC29B10D7E00FF8441 /* CSVManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CSVManager.swift; sourceTree = "<group>"; };
 		C276E6EE29B119B400FF8441 /* Contact.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Contact.swift; sourceTree = "<group>"; };
 		C276E6F029B11F5D00FF8441 /* ContactsViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContactsViewModel.swift; sourceTree = "<group>"; };
+		C276E6F229B1251E00FF8441 /* ContactCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContactCell.swift; sourceTree = "<group>"; };
+		C276E6F429B1263C00FF8441 /* UITableView+Extensions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UITableView+Extensions.swift"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -112,7 +116,9 @@
 				C276E6B729B10BC600FF8441 /* AppDelegate.swift */,
 				C276E6B929B10BC600FF8441 /* SceneDelegate.swift */,
 				C276E6BB29B10BC600FF8441 /* ContactsViewController.swift */,
+				C276E6F229B1251E00FF8441 /* ContactCell.swift */,
 				C276E6F029B11F5D00FF8441 /* ContactsViewModel.swift */,
+				C276E6F429B1263C00FF8441 /* UITableView+Extensions.swift */,
 				C276E6EC29B10D7E00FF8441 /* CSVManager.swift */,
 				C276E6EE29B119B400FF8441 /* Contact.swift */,
 				C276E6BD29B10BC600FF8441 /* Main.storyboard */,
@@ -282,8 +288,10 @@
 				C276E6BC29B10BC600FF8441 /* ContactsViewController.swift in Sources */,
 				C276E6F129B11F5D00FF8441 /* ContactsViewModel.swift in Sources */,
 				C276E6B829B10BC600FF8441 /* AppDelegate.swift in Sources */,
+				C276E6F529B1263C00FF8441 /* UITableView+Extensions.swift in Sources */,
 				C276E6EF29B119B400FF8441 /* Contact.swift in Sources */,
 				C276E6ED29B10D7E00FF8441 /* CSVManager.swift in Sources */,
+				C276E6F329B1251E00FF8441 /* ContactCell.swift in Sources */,
 				C276E6BA29B10BC600FF8441 /* SceneDelegate.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;

@@ -38,7 +38,7 @@ class ContactsViewController: UIViewController {
     }
     
     func bind() {
-        tableView.register(UITableViewCell.self, forCellReuseIdentifier: "cell")
+        tableView.register(type: ContactCell.self)
         cancellable = viewModel.$contacts.sink(receiveValue: { [weak self] _ in
             self?.tableView.reloadData()
         })
@@ -52,9 +52,11 @@ extension ContactsViewController: UITableViewDataSource {
     }
     
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
-        let cell = tableView.dequeueReusableCell(withIdentifier: "cell", for: indexPath)
+        let cell = tableView.dequeueReusableCell(type: ContactCell.self, indexPath: indexPath)
         let contact = viewModel.contacts[indexPath.row]
-        cell.textLabel?.text = contact.firstName
+        
+        cell.name = contact.firstName
+        cell.company = contact.companyName
         return cell
     }
 }
