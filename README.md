@@ -27,6 +27,7 @@ In a regular project, I would create the form entirely by myself. In my last pro
 ### What would I have done if I had more time?
 * Repository Layer: It's job is to know where to fetch information from: Cache or Backend, for example
 * Coordinator: it's job is to coordinate VC's presentation.
+* Make protocols for ViewModel and CSVManager for easier dependency injection for unit tests
 * Better UI with more colors and components.
 * Custom Swiftlint rules
 * Unit Tests for making sure contacts are edited properly
