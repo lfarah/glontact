@@ -119,14 +119,11 @@
 			children = (
 				C276E6B729B10BC600FF8441 /* AppDelegate.swift */,
 				C276E6B929B10BC600FF8441 /* SceneDelegate.swift */,
-				C276E6BB29B10BC600FF8441 /* ContactsViewController.swift */,
-				C276E6F029B11F5D00FF8441 /* ContactsViewModel.swift */,
-				C276E6F629B126F800FF8441 /* ContactDetailViewController.swift */,
-				C276E6FB29B2364C00FF8441 /* ContactDetailViewModel.swift */,
-				C276E6F229B1251E00FF8441 /* ContactCell.swift */,
-				C276E6F429B1263C00FF8441 /* UITableView+Extensions.swift */,
-				C276E6EC29B10D7E00FF8441 /* CSVManager.swift */,
-				C276E6EE29B119B400FF8441 /* Contact.swift */,
+				C276E70129B23AD900FF8441 /* Flow */,
+				C276E70429B23AFB00FF8441 /* Extensions */,
+				C276E70329B23AF000FF8441 /* Manager */,
+				C276E70529B23B1700FF8441 /* Components */,
+				C276E70229B23AE600FF8441 /* Model */,
 				C276E6C029B10BC700FF8441 /* Assets.xcassets */,
 				C276E6C229B10BC700FF8441 /* LaunchScreen.storyboard */,
 				C276E6EA29B10D5D00FF8441 /* sample_contacts.csv */,
@@ -150,6 +147,73 @@
 				C276E6DA29B10BC800FF8441 /* GlontactUITestsLaunchTests.swift */,
 			);
 			path = GlontactUITests;
+			sourceTree = "<group>";
+		};
+		C276E6FE29B23AC300FF8441 /* Contacts */ = {
+			isa = PBXGroup;
+			children = (
+				C276E6FF29B23ACA00FF8441 /* Contacts List */,
+				C276E70029B23AD300FF8441 /* Contact Detail */,
+			);
+			path = Contacts;
+			sourceTree = "<group>";
+		};
+		C276E6FF29B23ACA00FF8441 /* Contacts List */ = {
+			isa = PBXGroup;
+			children = (
+				C276E6BB29B10BC600FF8441 /* ContactsViewController.swift */,
+				C276E6F029B11F5D00FF8441 /* ContactsViewModel.swift */,
+			);
+			path = "Contacts List";
+			sourceTree = "<group>";
+		};
+		C276E70029B23AD300FF8441 /* Contact Detail */ = {
+			isa = PBXGroup;
+			children = (
+				C276E6F629B126F800FF8441 /* ContactDetailViewController.swift */,
+				C276E6FB29B2364C00FF8441 /* ContactDetailViewModel.swift */,
+			);
+			path = "Contact Detail";
+			sourceTree = "<group>";
+		};
+		C276E70129B23AD900FF8441 /* Flow */ = {
+			isa = PBXGroup;
+			children = (
+				C276E6FE29B23AC300FF8441 /* Contacts */,
+			);
+			path = Flow;
+			sourceTree = "<group>";
+		};
+		C276E70229B23AE600FF8441 /* Model */ = {
+			isa = PBXGroup;
+			children = (
+				C276E6EE29B119B400FF8441 /* Contact.swift */,
+			);
+			path = Model;
+			sourceTree = "<group>";
+		};
+		C276E70329B23AF000FF8441 /* Manager */ = {
+			isa = PBXGroup;
+			children = (
+				C276E6EC29B10D7E00FF8441 /* CSVManager.swift */,
+			);
+			path = Manager;
+			sourceTree = "<group>";
+		};
+		C276E70429B23AFB00FF8441 /* Extensions */ = {
+			isa = PBXGroup;
+			children = (
+				C276E6F429B1263C00FF8441 /* UITableView+Extensions.swift */,
+			);
+			path = Extensions;
+			sourceTree = "<group>";
+		};
+		C276E70529B23B1700FF8441 /* Components */ = {
+			isa = PBXGroup;
+			children = (
+				C276E6F229B1251E00FF8441 /* ContactCell.swift */,
+			);
+			path = Components;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
