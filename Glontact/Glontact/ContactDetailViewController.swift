@@ -10,13 +10,10 @@ import Eureka
 
 class ContactDetailViewController: FormViewController {
     
-    var contact: UpdatableContact
+    let viewModel: ContactDetailViewModel
     
-    @Published var onChange: [Contact] = []
-
-    init(contact: UpdatableContact) {
-        self.contact = contact
-        
+    init(viewModel: ContactDetailViewModel) {
+        self.viewModel = viewModel
         super.init(nibName: nil, bundle: nil)
     }
     
@@ -27,106 +24,106 @@ class ContactDetailViewController: FormViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         
-        title = contact.firstName
+        title = viewModel.contact.firstName
         
         form +++ Section("Info")
         <<< NameRow(){ row in
             row.title = "First Name"
             row.placeholder = "Enter text here"
-            row.value = contact.firstName
+            row.value = viewModel.contact.firstName
         }
         .onChange({ [weak self] row in
-            self?.contact.firstName = row.value ?? ""
+            self?.viewModel.contact.firstName = row.value ?? ""
         })
         
         <<< NameRow(){ row in
             row.title = "Last Name"
             row.placeholder = "Enter text here"
-            row.value = contact.lastName
+            row.value = viewModel.contact.lastName
         }
         .onChange({ [weak self] row in
-            self?.contact.lastName = row.value ?? ""
+            self?.viewModel.contact.lastName = row.value ?? ""
         })
         
         <<< NameRow(){ row in
             row.title = "Company"
             row.placeholder = "Enter text here"
-            row.value = contact.companyName
+            row.value = viewModel.contact.companyName
         }
         .onChange({ [weak self] row in
-            self?.contact.companyName = row.value ?? ""
+            self?.viewModel.contact.companyName = row.value ?? ""
         })
 
         <<< TextRow(){ row in
             row.title = "Address"
             row.placeholder = "Enter text here"
-            row.value = contact.address
+            row.value = viewModel.contact.address
         }
         .onChange({ [weak self] row in
-            self?.contact.address = row.value ?? ""
+            self?.viewModel.contact.address = row.value ?? ""
         })
 
         <<< TextRow(){ row in
             row.title = "City"
             row.placeholder = "Enter text here"
-            row.value = contact.city
+            row.value = viewModel.contact.city
         }
         .onChange({ [weak self] row in
-            self?.contact.city = row.value ?? ""
+            self?.viewModel.contact.city = row.value ?? ""
         })
 
         <<< TextRow(){ row in
             row.title = "County"
             row.placeholder = "Enter text here"
-            row.value = contact.county
+            row.value = viewModel.contact.county
         }
         .onChange({ [weak self] row in
-            self?.contact.county = row.value ?? ""
+            self?.viewModel.contact.county = row.value ?? ""
         })
 
         <<< TextRow(){ row in
             row.title = "State"
             row.placeholder = "Enter text here"
-            row.value = contact.state
+            row.value = viewModel.contact.state
         }
         .onChange({ [weak self] row in
-            self?.contact.state = row.value ?? ""
+            self?.viewModel.contact.state = row.value ?? ""
         })
 
         <<< TextRow(){ row in
             row.title = "Zip"
             row.placeholder = "Enter text here"
-            row.value = contact.zip
+            row.value = viewModel.contact.zip
         }
         .onChange({ [weak self] row in
-            self?.contact.zip = row.value ?? ""
+            self?.viewModel.contact.zip = row.value ?? ""
         })
 
         <<< PhoneRow(){ row in
             row.title = "Phone1"
             row.placeholder = "Enter text here"
-            row.value = contact.phone1
+            row.value = viewModel.contact.phone1
         }
         .onChange({ [weak self] row in
-            self?.contact.phone1 = row.value ?? ""
+            self?.viewModel.contact.phone1 = row.value ?? ""
         })
 
         <<< PhoneRow(){ row in
             row.title = "Phone"
             row.placeholder = "Enter text here"
-            row.value = contact.phone
+            row.value = viewModel.contact.phone
         }
         .onChange({ [weak self] row in
-            self?.contact.phone = row.value ?? ""
+            self?.viewModel.contact.phone = row.value ?? ""
         })
 
         <<< TextRow(){ row in
             row.title = "Email"
             row.placeholder = "Enter text here"
-            row.value = contact.email
+            row.value = viewModel.contact.email
         }
         .onChange({ [weak self] row in
-            self?.contact.email = row.value ?? ""
+            self?.viewModel.contact.email = row.value ?? ""
         })
     }
 }

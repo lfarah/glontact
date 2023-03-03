@@ -25,6 +25,7 @@
 		C276E6F529B1263C00FF8441 /* UITableView+Extensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = C276E6F429B1263C00FF8441 /* UITableView+Extensions.swift */; };
 		C276E6F729B126F800FF8441 /* ContactDetailViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = C276E6F629B126F800FF8441 /* ContactDetailViewController.swift */; };
 		C276E6FA29B129AE00FF8441 /* Eureka in Frameworks */ = {isa = PBXBuildFile; productRef = C276E6F929B129AE00FF8441 /* Eureka */; };
+		C276E6FC29B2364C00FF8441 /* ContactDetailViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = C276E6FB29B2364C00FF8441 /* ContactDetailViewModel.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -65,6 +66,7 @@
 		C276E6F229B1251E00FF8441 /* ContactCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContactCell.swift; sourceTree = "<group>"; };
 		C276E6F429B1263C00FF8441 /* UITableView+Extensions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UITableView+Extensions.swift"; sourceTree = "<group>"; };
 		C276E6F629B126F800FF8441 /* ContactDetailViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContactDetailViewController.swift; sourceTree = "<group>"; };
+		C276E6FB29B2364C00FF8441 /* ContactDetailViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContactDetailViewModel.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -122,6 +124,7 @@
 				C276E6BB29B10BC600FF8441 /* ContactsViewController.swift */,
 				C276E6F029B11F5D00FF8441 /* ContactsViewModel.swift */,
 				C276E6F629B126F800FF8441 /* ContactDetailViewController.swift */,
+				C276E6FB29B2364C00FF8441 /* ContactDetailViewModel.swift */,
 				C276E6F229B1251E00FF8441 /* ContactCell.swift */,
 				C276E6F429B1263C00FF8441 /* UITableView+Extensions.swift */,
 				C276E6EC29B10D7E00FF8441 /* CSVManager.swift */,
@@ -300,6 +303,7 @@
 				C276E6EF29B119B400FF8441 /* Contact.swift in Sources */,
 				C276E6ED29B10D7E00FF8441 /* CSVManager.swift in Sources */,
 				C276E6F329B1251E00FF8441 /* ContactCell.swift in Sources */,
+				C276E6FC29B2364C00FF8441 /* ContactDetailViewModel.swift in Sources */,
 				C276E6BA29B10BC600FF8441 /* SceneDelegate.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;

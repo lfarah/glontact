@@ -69,8 +69,11 @@ extension ContactsViewController: UITableViewDelegate {
     func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
         // If I had more time, I would've implemented a Coordinator
         let contact = viewModel.contactStore.contacts[indexPath.row]
-        let vc = ContactDetailViewController(contact: contact)
+        
+        let vm = ContactDetailViewModel(contact: contact)
+        let vc = ContactDetailViewController(viewModel: vm)
         
         navigationController?.pushViewController(vc, animated: true)
+        tableView.deselectRow(at: indexPath, animated: true)
     }
 }
