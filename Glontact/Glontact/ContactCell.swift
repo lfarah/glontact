@@ -9,6 +9,9 @@ import UIKit
 
 class ContactCell: UITableViewCell {
 
+    struct Constants {
+        static let padding: CGFloat = 16
+    }
     private lazy var nameLabel: UILabel = {
         let view = UILabel(frame: .zero)
         view.translatesAutoresizingMaskIntoConstraints = false
@@ -51,14 +54,13 @@ class ContactCell: UITableViewCell {
         contentView.addSubview(nameLabel)
         contentView.addSubview(companyLabel)
 
-        // TODO: Remove hardcoded values
-        nameLabel.leadingAnchor.constraint(equalTo: contentView.leadingAnchor, constant: 16).isActive = true
-        nameLabel.trailingAnchor.constraint(equalTo: contentView.trailingAnchor, constant: -16).isActive = true
-        nameLabel.topAnchor.constraint(equalTo: contentView.topAnchor, constant: 16).isActive = true
+        nameLabel.leadingAnchor.constraint(equalTo: contentView.leadingAnchor, constant: Constants.padding).isActive = true
+        nameLabel.trailingAnchor.constraint(equalTo: contentView.trailingAnchor, constant: -Constants.padding).isActive = true
+        nameLabel.topAnchor.constraint(equalTo: contentView.topAnchor, constant: Constants.padding).isActive = true
 
-        companyLabel.leadingAnchor.constraint(equalTo: contentView.leadingAnchor, constant: 16).isActive = true
-        companyLabel.trailingAnchor.constraint(equalTo: contentView.trailingAnchor, constant: -16).isActive = true
+        companyLabel.leadingAnchor.constraint(equalTo: contentView.leadingAnchor, constant: Constants.padding).isActive = true
+        companyLabel.trailingAnchor.constraint(equalTo: contentView.trailingAnchor, constant: -Constants.padding).isActive = true
         companyLabel.topAnchor.constraint(equalTo: nameLabel.bottomAnchor).isActive = true
-        companyLabel.bottomAnchor.constraint(equalTo: contentView.bottomAnchor, constant: -16).isActive = true
+        companyLabel.bottomAnchor.constraint(equalTo: contentView.bottomAnchor, constant: -Constants.padding).isActive = true
     }
 }

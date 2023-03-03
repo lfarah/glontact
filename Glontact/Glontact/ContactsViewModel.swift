@@ -22,7 +22,7 @@ class ContactStore: ObservableObject {
 
         // notify that this object will change when any of the contacts change
         Publishers.MergeMany(observables)
-            .sink(receiveValue: { value in
+            .sink(receiveValue: { _ in
                 self.objectWillChange.send()
             })
            .store(in: &cancellables)

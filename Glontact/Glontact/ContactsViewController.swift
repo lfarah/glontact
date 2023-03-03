@@ -70,10 +70,10 @@ extension ContactsViewController: UITableViewDelegate {
         // If I had more time, I would've implemented a Coordinator
         let contact = viewModel.contactStore.contacts[indexPath.row]
         
-        let vm = ContactDetailViewModel(contact: contact)
-        let vc = ContactDetailViewController(viewModel: vm)
+        let viewModel = ContactDetailViewModel(contact: contact)
+        let viewController = ContactDetailViewController(viewModel: viewModel)
         
-        navigationController?.pushViewController(vc, animated: true)
+        navigationController?.pushViewController(viewController, animated: true)
         tableView.deselectRow(at: indexPath, animated: true)
     }
 }

@@ -23,11 +23,16 @@ class ContactDetailViewController: FormViewController {
     
     override func viewDidLoad() {
         super.viewDidLoad()
-        
+                
+        layout()
+    }
+    
+    func layout() {
         title = viewModel.contact.firstName
-        
+
+        // Form
         form +++ Section("Info")
-        <<< NameRow(){ row in
+        <<< NameRow() { row in
             row.title = "First Name"
             row.placeholder = "Enter text here"
             row.value = viewModel.contact.firstName
@@ -36,7 +41,7 @@ class ContactDetailViewController: FormViewController {
             self?.viewModel.contact.firstName = row.value ?? ""
         })
         
-        <<< NameRow(){ row in
+        <<< NameRow() { row in
             row.title = "Last Name"
             row.placeholder = "Enter text here"
             row.value = viewModel.contact.lastName
@@ -45,7 +50,7 @@ class ContactDetailViewController: FormViewController {
             self?.viewModel.contact.lastName = row.value ?? ""
         })
         
-        <<< NameRow(){ row in
+        <<< NameRow() { row in
             row.title = "Company"
             row.placeholder = "Enter text here"
             row.value = viewModel.contact.companyName
@@ -54,7 +59,7 @@ class ContactDetailViewController: FormViewController {
             self?.viewModel.contact.companyName = row.value ?? ""
         })
 
-        <<< TextRow(){ row in
+        <<< TextRow() { row in
             row.title = "Address"
             row.placeholder = "Enter text here"
             row.value = viewModel.contact.address
@@ -63,7 +68,7 @@ class ContactDetailViewController: FormViewController {
             self?.viewModel.contact.address = row.value ?? ""
         })
 
-        <<< TextRow(){ row in
+        <<< TextRow() { row in
             row.title = "City"
             row.placeholder = "Enter text here"
             row.value = viewModel.contact.city
@@ -72,7 +77,7 @@ class ContactDetailViewController: FormViewController {
             self?.viewModel.contact.city = row.value ?? ""
         })
 
-        <<< TextRow(){ row in
+        <<< TextRow() { row in
             row.title = "County"
             row.placeholder = "Enter text here"
             row.value = viewModel.contact.county
@@ -81,7 +86,7 @@ class ContactDetailViewController: FormViewController {
             self?.viewModel.contact.county = row.value ?? ""
         })
 
-        <<< TextRow(){ row in
+        <<< TextRow() { row in
             row.title = "State"
             row.placeholder = "Enter text here"
             row.value = viewModel.contact.state
@@ -90,7 +95,7 @@ class ContactDetailViewController: FormViewController {
             self?.viewModel.contact.state = row.value ?? ""
         })
 
-        <<< TextRow(){ row in
+        <<< TextRow() { row in
             row.title = "Zip"
             row.placeholder = "Enter text here"
             row.value = viewModel.contact.zip
@@ -99,7 +104,7 @@ class ContactDetailViewController: FormViewController {
             self?.viewModel.contact.zip = row.value ?? ""
         })
 
-        <<< PhoneRow(){ row in
+        <<< PhoneRow() { row in
             row.title = "Phone1"
             row.placeholder = "Enter text here"
             row.value = viewModel.contact.phone1
@@ -108,7 +113,7 @@ class ContactDetailViewController: FormViewController {
             self?.viewModel.contact.phone1 = row.value ?? ""
         })
 
-        <<< PhoneRow(){ row in
+        <<< PhoneRow() { row in
             row.title = "Phone"
             row.placeholder = "Enter text here"
             row.value = viewModel.contact.phone
@@ -117,7 +122,7 @@ class ContactDetailViewController: FormViewController {
             self?.viewModel.contact.phone = row.value ?? ""
         })
 
-        <<< TextRow(){ row in
+        <<< TextRow() { row in
             row.title = "Email"
             row.placeholder = "Enter text here"
             row.value = viewModel.contact.email
