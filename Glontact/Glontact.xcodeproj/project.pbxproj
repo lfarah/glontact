@@ -25,6 +25,8 @@
 		C276E6F729B126F800FF8441 /* ContactDetailViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = C276E6F629B126F800FF8441 /* ContactDetailViewController.swift */; };
 		C276E6FA29B129AE00FF8441 /* Eureka in Frameworks */ = {isa = PBXBuildFile; productRef = C276E6F929B129AE00FF8441 /* Eureka */; };
 		C276E6FC29B2364C00FF8441 /* ContactDetailViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = C276E6FB29B2364C00FF8441 /* ContactDetailViewModel.swift */; };
+		C276E71029B9171F00FF8441 /* MockCSVManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = C276E70F29B9171F00FF8441 /* MockCSVManager.swift */; };
+		C276E71229B91DE900FF8441 /* CSVManagerTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = C276E71129B91DE900FF8441 /* CSVManagerTests.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -65,6 +67,8 @@
 		C276E6F429B1263C00FF8441 /* UITableView+Extensions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UITableView+Extensions.swift"; sourceTree = "<group>"; };
 		C276E6F629B126F800FF8441 /* ContactDetailViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContactDetailViewController.swift; sourceTree = "<group>"; };
 		C276E6FB29B2364C00FF8441 /* ContactDetailViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContactDetailViewModel.swift; sourceTree = "<group>"; };
+		C276E70F29B9171F00FF8441 /* MockCSVManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MockCSVManager.swift; sourceTree = "<group>"; };
+		C276E71129B91DE900FF8441 /* CSVManagerTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CSVManagerTests.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -136,6 +140,7 @@
 			isa = PBXGroup;
 			children = (
 				C276E6CE29B10BC800FF8441 /* GlontactTests.swift */,
+				C276E71129B91DE900FF8441 /* CSVManagerTests.swift */,
 			);
 			path = GlontactTests;
 			sourceTree = "<group>";
@@ -196,6 +201,7 @@
 			isa = PBXGroup;
 			children = (
 				C276E6EC29B10D7E00FF8441 /* CSVManager.swift */,
+				C276E70F29B9171F00FF8441 /* MockCSVManager.swift */,
 			);
 			path = Manager;
 			sourceTree = "<group>";
@@ -386,6 +392,7 @@
 				C276E6EF29B119B400FF8441 /* Contact.swift in Sources */,
 				C276E6ED29B10D7E00FF8441 /* CSVManager.swift in Sources */,
 				C276E6F329B1251E00FF8441 /* ContactCell.swift in Sources */,
+				C276E71029B9171F00FF8441 /* MockCSVManager.swift in Sources */,
 				C276E6FC29B2364C00FF8441 /* ContactDetailViewModel.swift in Sources */,
 				C276E6BA29B10BC600FF8441 /* SceneDelegate.swift in Sources */,
 			);
@@ -395,6 +402,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				C276E71229B91DE900FF8441 /* CSVManagerTests.swift in Sources */,
 				C276E6CF29B10BC800FF8441 /* GlontactTests.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;

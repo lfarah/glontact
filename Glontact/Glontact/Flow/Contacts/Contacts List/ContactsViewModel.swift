@@ -33,8 +33,9 @@ class ContactStore: ObservableObject {
 class ContactsViewModel: ObservableObject {
     @Published var contactStore = ContactStore()
         
-    init(manager: CSVManager = CSVManager()) {
-        manager.loadCSV()
+    init(manager: ICVSManager = CSVManager()) {
+        // Should be an enum
+        manager.loadCSV(fileName: "sample_contacts")
             .map { $0.map { $0.toUpdatable() }}
             .replaceError(with: [])
             .map { ContactStore(contacts: $0) }

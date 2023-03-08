@@ -9,19 +9,47 @@ import Foundation
 import SwiftCSV
 import Combine
 
-struct CSVManager {
+protocol ICVSManager {
+    func loadCSV(fileName: String) -> AnyPublisher<[Contact], Error>
+}
+
+enum CSVManagerError: Error {
+    case invalidFile
+}
+
+struct CSVManager: ICVSManager {
     
     /// Loads contacts from CSV file.
-    func loadCSV() -> AnyPublisher<[Contact], Error> {
-        Future<[Contact], Error> { promise in
+    func loadCSV(fileName: String) -> AnyPublisher<[Contact], Error> {
+        Future<CSV<Enumerated>, Error> { promise in
             do {
-                let resource: CSV? = try CSV<Enumerated>(
-                    name: "sample_contacts",
+                if let resource = try CSV<Enumerated>(
+                    name: fileName,
                     extension: "csv",
-                    encoding: .utf8)
+                    encoding: .utf8) {
+                    promise(.success(resource))
+                } else {
+                    promise(.failure(CSVManagerError.invalidFile))
+                }
+                    
+            } catch let parseError as CSVParseError {
+                promise(.failure(parseError))
+            } catch {
+                promise(.failure(error))
+            }
+        }
+        .flatMap({ csv in
+            self.parseCSV(with: csv)
+        })
+        .eraseToAnyPublisher()
+    }
+    
+    func parseCSV(with csv: CSV<Enumerated>) -> AnyPublisher<[Contact], Error> {
+        var contacts: [Contact] = []
+        return Future<[Contact], Error> { promise in
+            do {
                 
-                var contacts: [Contact] = []
-                try resource?.enumerateAsDict({ dict in
+                try csv.enumerateAsDict({ dict in
                     let decoder = JSONDecoder()
                     decoder.keyDecodingStrategy = .convertFromSnakeCase
                     do {
@@ -32,13 +60,13 @@ struct CSVManager {
                         promise(.failure(error))
                     }
                 })
-                promise(.success(contacts))
-            } catch let parseError as CSVParseError {
-                promise(.failure(parseError))
-            } catch {
+            } catch let error {
                 promise(.failure(error))
             }
+            
+            promise(.success(contacts))
         }
         .eraseToAnyPublisher()
+        
     }
 }
